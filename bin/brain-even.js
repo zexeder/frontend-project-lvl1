@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { userName, sayHi } from '../src/index.js';
+import { userName } from '../src/index.js';
 
 let questNum = 0;
 let userAnswer = '';
@@ -27,11 +27,11 @@ const isEven = (num) => {
 };
 
 const checkScore = () => {
-  if(score === 3) {
+  if (score === 3) {
     console.log(`Congratulations, ${userName}!`);
     endGame = 0;
   }
-}
+};
 
 const checkAnswer = (answer, name) => {
   if (answer === isEven(questNum)) {
@@ -46,13 +46,10 @@ Let's try again, ${name}!`);
 };
 
 
-
-
-
-sayHi(userName);
+// sayHi(userName);
 gameRules();
 while (endGame) {
   generateNum();
   getAnswer(questNum);
-  checkAnswer(userAnswer, userName); 
+  checkAnswer(userAnswer, userName);
 }
