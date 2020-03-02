@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { userName, sayHi } from '../src/index.js';
+import { sayHi } from '../src/index.js';
 
-sayHi(userName);
+sayHi();
