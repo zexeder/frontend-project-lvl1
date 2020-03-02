@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { sayHi } from '../src/index.js';
+import { userName, sayHi } from '../src/index.js';
 
 let questNum = 0;
 let userAnswer = '';
@@ -46,10 +46,8 @@ Let's try again, ${name}!`);
 };
 
 
-const userName = sayHi();
-
+sayHi(userName);
 gameRules();
-
 while (endGame) {
   generateNum();
   getAnswer(questNum);
