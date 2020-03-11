@@ -1,22 +1,9 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { userName, sayHi } from '../src/index.js';
-
-let questNum = 0;
-let userAnswer = '';
-let score = 0;
-let endGame = 1;
+// import { endGame, greeting, generateNum, getAnswer, checkAnswer } from '../src/index.js';
+import * as gameLib from '../src/index.js';
 
 const gameRules = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-};
-
-const generateNum = () => {
-  questNum = Math.round(Math.random() * 100);
-};
-
-const getAnswer = (num) => {
-  userAnswer = readlineSync.question(`Question: ${num} `);
 };
 
 const isEven = (num) => {
@@ -26,30 +13,11 @@ const isEven = (num) => {
   return 'no';
 };
 
-const checkScore = () => {
-  if (score === 3) {
-    console.log(`Congratulations, ${userName}!`);
-    endGame = 0;
-  }
-};
 
-const checkAnswer = (answer, name) => {
-  if (answer === isEven(questNum)) {
-    console.log('Correct!');
-    score += 1;
-    checkScore();
-  } else {
-    console.log(`"yes" is wrong answer ;(. Correct answer was "no".
-Let's try again, ${name}!`);
-    endGame = 0;
-  }
-};
-
-
-sayHi(userName);
+const userName = gameLib.greeting();
 gameRules();
-while (endGame) {
-  generateNum();
-  getAnswer(questNum);
-  checkAnswer(userAnswer, userName);
+while (gameLib.endGame) {
+  let questNum = gameLib.generateNum();
+  let userAnswer = gameLib.getAnswer(questNum);
+  gameLib.checkAnswer(isEven(questNum), userAnswer, userName);
 }
