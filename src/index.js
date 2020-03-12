@@ -4,9 +4,9 @@ import readlineSync from 'readline-sync';
 let endGame = 1;
 let score = 0;
 
-const gameStatus = () => {
-  return endGame;
-};
+// const gameStatus = () => {
+//   return endGame;
+// };
 
 const greeting = () => {
   console.log('Welcome to the Brain Games!');

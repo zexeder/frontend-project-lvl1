@@ -1,3 +1,5 @@
+import * as gameLib from '../index.js';
+
 const operationSign = () => {
   const num = Math.floor((Math.random() * 3) + 1);
   let oper = '+';
@@ -26,4 +28,17 @@ const calc = (oper, a, b) => {
   }
 };
 
-export { operationSign, calc };
+export default () => {
+  const userName = gameLib.greeting();
+  gameLib.gameRules('What is the result of the expression?');
+  while (gameLib.endGame) {
+    const num1 = gameLib.generateNum();
+    const num2 = gameLib.generateNum();
+    const oper = operationSign();
+    const result = calc(oper, num1, num2);
+    const question = `${num1} ${oper} ${num2}`;
+    // console.log(num1, oper, num2, '=', result);
+    const userAnswer = gameLib.getAnswer(question);
+    gameLib.checkAnswer(result, Number(userAnswer), userName);
+  }
+};
