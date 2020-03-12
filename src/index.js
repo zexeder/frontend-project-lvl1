@@ -4,8 +4,11 @@ import readlineSync from 'readline-sync';
 let endGame = 1;
 let score = 0;
 
-const 
- = () => {
+const gameStatus = () => {
+  return endGame;
+};
+
+const greeting = () => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
@@ -16,13 +19,9 @@ const gameRules = (str) => {
   console.log(str);
 };
 
-const generateNum = () => {
-  return Math.floor(Math.random() * 50 + 1);
-};
+const generateNum = () => Math.floor(Math.random() * 50 + 1);
 
-const getAnswer = (num) => {
-  return readlineSync.question(`Question: ${num} `);
-};
+const getAnswer = (num) => readlineSync.question(`Question: ${num} `);
 
 const checkScore = (name) => {
   if (score === 3) {
@@ -43,4 +42,11 @@ Let's try again, ${name}!`);
   }
 };
 
-export { endGame, gameRules, greeting, generateNum, getAnswer, checkAnswer};
+export {
+  endGame,
+  gameRules,
+  greeting,
+  generateNum,
+  getAnswer,
+  checkAnswer,
+};
