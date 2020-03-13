@@ -8,3 +8,6 @@
 
 ### Запуск brain-gdc
 [![asciicast](https://asciinema.org/a/masAM9EB4vQlCIvzJTMCgGFIl.svg)](https://asciinema.org/a/masAM9EB4vQlCIvzJTMCgGFIl?t=8)
+
+### Запуск brain-progression
+[![asciicast](https://asciinema.org/a/76K9C0OQtcjzhHle6DdmebkHL.svg)](https://asciinema.org/a/76K9C0OQtcjzhHle6DdmebkHL?t=9)

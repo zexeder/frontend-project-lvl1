@@ -22,7 +22,7 @@ const gameRules = (str) => {
   console.log(str);
 };
 
-const generateNum = () => Math.floor(Math.random() * 50 + 1);
+const generateNum = (max = 50) => Math.floor(Math.random() * max + 1);
 
 const getAnswer = (num) => readlineSync.question(`Question: ${num} `);
 
