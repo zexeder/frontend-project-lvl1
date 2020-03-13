@@ -4,9 +4,12 @@ import readlineSync from 'readline-sync';
 let endGame = 1;
 let score = 0;
 
-// const gameStatus = () => {
-//   return endGame;
-// };
+const checkGameStatus = () => {
+  if (endGame === 0) {
+    return false;
+  }
+  return true;
+};
 
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -43,7 +46,7 @@ Let's try again, ${name}!`);
 };
 
 export {
-  endGame,
+  checkGameStatus,
   gameRules,
   greeting,
   generateNum,

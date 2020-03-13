@@ -31,7 +31,7 @@ const calc = (oper, a, b) => {
 export default () => {
   const userName = gameLib.greeting();
   gameLib.gameRules('What is the result of the expression?');
-  while (gameLib.endGame) {
+  while (gameLib.checkGameStatus()) {
     const num1 = gameLib.generateNum();
     const num2 = gameLib.generateNum();
     const oper = operationSign();

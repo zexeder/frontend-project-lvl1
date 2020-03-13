@@ -11,7 +11,7 @@ export default () => {
   const userName = gameLib.greeting();
 
   gameLib.gameRules('Answer "yes" if the number is even, otherwise answer "no".');
-  while (gameLib.endGame) {
+  while (gameLib.checkGameStatus()) {
     const questNum = gameLib.generateNum();
     const userAnswer = gameLib.getAnswer(questNum);
     gameLib.checkAnswer(isEven(questNum), userAnswer, userName);
