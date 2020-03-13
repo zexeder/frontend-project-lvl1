@@ -1,5 +1,7 @@
 import * as gameLib from '../index.js';
 
+const maxValue = 50;
+
 const gcd = (num1, num2) => {
   let greatest = Math.min(num1, num2);
 
@@ -17,8 +19,8 @@ export default () => {
   const userName = gameLib.greeting();
   gameLib.gameRules('What is the result of the expression?');
   while (gameLib.checkGameStatus()) {
-    const num1 = gameLib.generateNum();
-    const num2 = gameLib.generateNum();
+    const num1 = gameLib.generateNum(maxValue);
+    const num2 = gameLib.generateNum(maxValue);
     const result = gcd(num1, num2);
     const question = `${num1} ${num2}`;
     // console.log(num1, num2, result);

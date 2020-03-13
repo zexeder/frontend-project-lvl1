@@ -1,5 +1,7 @@
 import * as gameLib from '../index.js';
 
+const maxValue = 50;
+
 const operationSign = () => {
   const num = Math.floor((Math.random() * 3) + 1);
   let oper = '+';
@@ -32,8 +34,8 @@ export default () => {
   const userName = gameLib.greeting();
   gameLib.gameRules('What is the result of the expression?');
   while (gameLib.checkGameStatus()) {
-    const num1 = gameLib.generateNum();
-    const num2 = gameLib.generateNum();
+    const num1 = gameLib.generateNum(maxValue);
+    const num2 = gameLib.generateNum(maxValue);
     const oper = operationSign();
     const result = calc(oper, num1, num2);
     const question = `${num1} ${oper} ${num2}`;

@@ -1,5 +1,7 @@
 import * as gameLib from '../index.js';
 
+const maxValue = 10;
+
 const isPrime = (num) => {
   const half = Math.ceil(num / 2);
   if (num < 2) {
@@ -19,7 +21,7 @@ export default () => {
 
   gameLib.gameRules('Answer "yes" if given number is prime. Otherwise answer "no".');
   while (gameLib.checkGameStatus()) {
-    const questNum = gameLib.generateNum(100);
+    const questNum = gameLib.generateNum(maxValue);
     const userAnswer = gameLib.getAnswer(questNum);
     gameLib.checkAnswer(isPrime(questNum), userAnswer, userName);
   }

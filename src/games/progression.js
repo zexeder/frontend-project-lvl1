@@ -1,6 +1,7 @@
 import * as gameLib from '../index.js';
 
 const progressionLength = 10;
+const maxValue = 10;
 
 const generateProgression = (start, step) => {
   const arr = [];
@@ -9,7 +10,6 @@ const generateProgression = (start, step) => {
   }
   return arr;
 };
-
 
 const hideNumber = (num, arr) => {
   // arr[num] = '..';
@@ -21,11 +21,11 @@ export default () => {
   const userName = gameLib.greeting();
   gameLib.gameRules('What number is missing in the progression?');
   while (gameLib.checkGameStatus()) {
-    const startNum = gameLib.generateNum(10);
-    const stepNum = gameLib.generateNum(10);
+    const startNum = gameLib.generateNum(maxValue);
+    const stepNum = gameLib.generateNum(maxValue);
     const progressionArr = generateProgression(startNum, stepNum);
 
-    const hiddenIndex = gameLib.generateNum(9);
+    const hiddenIndex = gameLib.generateNum(maxValue - 1);
 
     const hiddenNum = progressionArr[hiddenIndex];
     const rightAnswer = hiddenNum;

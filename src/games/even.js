@@ -1,5 +1,6 @@
 import * as gameLib from '../index.js';
 
+const maxValue = 50;
 const isEven = (num) => {
   if (num % 2 === 0) {
     return 'yes';
@@ -12,7 +13,7 @@ export default () => {
 
   gameLib.gameRules('Answer "yes" if the number is even, otherwise answer "no".');
   while (gameLib.checkGameStatus()) {
-    const questNum = gameLib.generateNum();
+    const questNum = gameLib.generateNum(maxValue);
     const userAnswer = gameLib.getAnswer(questNum);
     gameLib.checkAnswer(isEven(questNum), userAnswer, userName);
   }
