@@ -11,3 +11,6 @@
 
 ### Запуск brain-progression
 [![asciicast](https://asciinema.org/a/76K9C0OQtcjzhHle6DdmebkHL.svg)](https://asciinema.org/a/76K9C0OQtcjzhHle6DdmebkHL?t=9)
+
+### Запуск brain-prime
+[![asciicast](https://asciinema.org/a/Mn4hto6eZl2ZFvxTdFJFox2wZ.svg)](https://asciinema.org/a/Mn4hto6eZl2ZFvxTdFJFox2wZ)
