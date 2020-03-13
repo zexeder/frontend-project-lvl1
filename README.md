@@ -5,3 +5,6 @@
 
 ### Установка и запуск brain-calc
 [![asciicast](https://asciinema.org/a/7DW6ywdSxZEtT9Hem0CABqeNA.svg)](https://asciinema.org/a/7DW6ywdSxZEtT9Hem0CABqeNA?t=8)
+
+### Запуск brain-gdc
+[![asciicast](https://asciinema.org/a/masAM9EB4vQlCIvzJTMCgGFIl.svg)](https://asciinema.org/a/masAM9EB4vQlCIvzJTMCgGFIl?t=8)
