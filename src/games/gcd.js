@@ -1,6 +1,6 @@
 import * as gameLib from '../index.js';
 
-const gdc = (num1, num2) => {
+const gcd = (num1, num2) => {
   let greatest = Math.min(num1, num2);
 
   while (greatest > 1) {
@@ -19,7 +19,7 @@ export default () => {
   while (gameLib.checkGameStatus()) {
     const num1 = gameLib.generateNum();
     const num2 = gameLib.generateNum();
-    const result = gdc(num1, num2);
+    const result = gcd(num1, num2);
     const question = `${num1} ${num2}`;
     // console.log(num1, num2, result);
     const userAnswer = gameLib.getAnswer(question);

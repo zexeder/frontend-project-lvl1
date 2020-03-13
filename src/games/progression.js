@@ -1,8 +1,10 @@
 import * as gameLib from '../index.js';
 
+const progressionLength = 10;
+
 const generateProgression = (start, step) => {
   const arr = [];
-  for (let i = start; arr.length < 10; i += step) {
+  for (let i = start; arr.length < progressionLength; i += step) {
     arr.push(i);
   }
   return arr;
