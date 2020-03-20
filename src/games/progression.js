@@ -1,7 +1,9 @@
 import * as gameLib from '../index.js';
 
 const progressionLength = 10;
-const maxValue = 10;
+const min = 0;
+const max = 10;
+const rules = 'What number is missing in the progression?';
 
 const generateProgression = (start, step) => {
   const arr = [];
@@ -12,25 +14,39 @@ const generateProgression = (start, step) => {
 };
 
 const hideNumber = (num, arr) => {
-  // arr[num] = '..';
   arr.splice(num, 1, '..');
   return arr.join(' ');
 };
 
+const generateGameData = () => {
+  const startNum = gameLib.generateNum(min, max);
+  const stepNum = gameLib.generateNum(min, max);
+  const progressionArr = generateProgression(startNum, stepNum);
+  const hiddenArrIndex = gameLib.generateNum(min, max - 1);
+  const hiddenNum = progressionArr[hiddenArrIndex];
+
+  const questionNum = hideNumber(hiddenArrIndex, progressionArr);
+  const rightAnswer = hiddenNum;
+
+  return [questionNum, rightAnswer];
+};
+
 export default () => {
-  const userName = gameLib.greeting();
-  gameLib.gameRules('What number is missing in the progression?');
-  while (gameLib.checkGameStatus()) {
-    const startNum = gameLib.generateNum(maxValue);
-    const stepNum = gameLib.generateNum(maxValue);
-    const progressionArr = generateProgression(startNum, stepNum);
+  gameLib.gameEngine(rules, generateGameData);
 
-    const hiddenIndex = gameLib.generateNum(maxValue - 1);
+  // const userName = gameLib.greeting();
+  // gameLib.gameRules(rules);
+  // while (gameLib.checkGameStatus()) {
+  //   const startNum = gameLib.generateNum(min, max);
+  //   const stepNum = gameLib.generateNum(min, max);
+  //   const progressionArr = generateProgression(startNum, stepNum);
 
-    const hiddenNum = progressionArr[hiddenIndex];
-    const rightAnswer = hiddenNum;
-    const question = hideNumber(hiddenIndex, progressionArr);
-    const userAnswer = gameLib.getAnswer(question);
-    gameLib.checkAnswer(Number(rightAnswer), Number(userAnswer), userName);
-  }
+  //   const hiddenArrIndex = gameLib.generateNum(min, max - 1);
+
+  //   const hiddenNum = progressionArr[hiddenArrIndex];
+  //   const rightAnswer = hiddenNum;
+  //   const question = hideNumber(hiddenArrIndex, progressionArr);
+  //   const userAnswer = gameLib.getAnswer(question);
+  //   gameLib.checkAnswer(Number(rightAnswer), Number(userAnswer), userName);
+  // }
 };

@@ -1,6 +1,8 @@
 import * as gameLib from '../index.js';
 
-const maxValue = 50;
+const min = 1;
+const max = 50;
+const rules = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   let greatest = Math.min(num1, num2);
@@ -15,16 +17,26 @@ const gcd = (num1, num2) => {
   return 1;
 };
 
+const generateGameData = () => {
+  const num1 = gameLib.generateNum(min, max);
+  const num2 = gameLib.generateNum(min, max);
+  const questionNum = `${num1} ${num2}`;
+  const rightAnswer = gcd(num1, num2);
+  return [questionNum, rightAnswer];
+};
+
 export default () => {
-  const userName = gameLib.greeting();
-  gameLib.gameRules('What is the result of the expression?');
-  while (gameLib.checkGameStatus()) {
-    const num1 = gameLib.generateNum(maxValue);
-    const num2 = gameLib.generateNum(maxValue);
-    const result = gcd(num1, num2);
-    const question = `${num1} ${num2}`;
-    // console.log(num1, num2, result);
-    const userAnswer = gameLib.getAnswer(question);
-    gameLib.checkAnswer(result, Number(userAnswer), userName);
-  }
+  gameLib.gameEngine(rules, generateGameData);
+
+  // const userName = gameLib.greeting();
+  // gameLib.gameRules(rules);
+  // while (gameLib.checkGameStatus()) {
+  //   const num1 = gameLib.generateNum(min, max);
+  //   const num2 = gameLib.generateNum(min, max);
+  //   const result = gcd(num1, num2);
+  //   const question = `${num1} ${num2}`;
+  //   // console.log(num1, num2, result);
+  //   const userAnswer = gameLib.getAnswer(question);
+  //   gameLib.checkAnswer(result, Number(userAnswer), userName);
+  // }
 };

@@ -1,22 +1,13 @@
 import * as gameLib from '../index.js';
 
-const maxValue = 50;
+const min = 0;
+const max = 50;
+const rules = 'What is the result of the expression?';
+const operationsArr = ['+', '-', '*'];
 
-const operationSign = () => {
-  const num = Math.floor((Math.random() * 3) + 1);
-  let oper = '+';
-  switch (num) {
-    case 1:
-      oper = '-';
-      break;
-    case 2:
-      oper = '*';
-      break;
-    default:
-      oper = '+';
-      break;
-  }
-  return oper;
+const operationSign = (arr) => {
+  const num = gameLib.generateNum(0, 2);
+  return arr[num];
 };
 
 const calc = (oper, a, b) => {
@@ -30,17 +21,29 @@ const calc = (oper, a, b) => {
   }
 };
 
+const generateGameData = () => {
+  const num1 = gameLib.generateNum(min, max);
+  const num2 = gameLib.generateNum(min, max);
+  const oper = operationSign(operationsArr);
+  const questionNum = `${num1} ${oper} ${num2}`;
+  const rightAnswer = calc(oper, num1, num2);
+  // console.log([questionNum, rightAnswer]);
+  return [questionNum, rightAnswer];
+};
+
 export default () => {
-  const userName = gameLib.greeting();
-  gameLib.gameRules('What is the result of the expression?');
-  while (gameLib.checkGameStatus()) {
-    const num1 = gameLib.generateNum(maxValue);
-    const num2 = gameLib.generateNum(maxValue);
-    const oper = operationSign();
-    const result = calc(oper, num1, num2);
-    const question = `${num1} ${oper} ${num2}`;
-    // console.log(num1, oper, num2, '=', result);
-    const userAnswer = gameLib.getAnswer(question);
-    gameLib.checkAnswer(result, Number(userAnswer), userName);
-  }
+  gameLib.gameEngine(rules, generateGameData);
+
+  // const userName = gameLib.greeting();
+  // gameLib.gameRules(rules);
+  // while (gameLib.checkGameStatus()) {
+  //   const num1 = gameLib.generateNum(min, max);
+  //   const num2 = gameLib.generateNum(min, max);
+  //   const oper = operationSign(operationsArr);
+  //   const result = calc(oper, num1, num2);
+  //   const question = `${num1} ${oper} ${num2}`;
+  //   // console.log(num1, oper, num2, '=', result);
+  //   const userAnswer = gameLib.getAnswer(question);
+  //   gameLib.checkAnswer(result, Number(userAnswer), userName);
+  // }
 };

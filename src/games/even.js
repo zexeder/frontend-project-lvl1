@@ -1,20 +1,35 @@
 import * as gameLib from '../index.js';
 
-const maxValue = 50;
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
+const min = 0;
+const max = 50;
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (num) => (num % 2 === 0);
+
+// const getRightAnswer = isEven(questionNum) ? 'yes' : 'no';
+
+// const getRightAnswer = (even) => {
+//   if (even === true) {
+//     return 'yes';
+//   }
+//   return 'no';
+// };
+
+const generateData = () => {
+  const questionNum = gameLib.generateNum(min, max);
+  const rightAnswer = isEven(questionNum) ? 'yes' : 'no';
+  // console.log([questionNum, rightAnswer]);
+  return [questionNum, rightAnswer];
 };
 
 export default () => {
-  const userName = gameLib.greeting();
+  gameLib.gameEngine(rules, generateData);
 
-  gameLib.gameRules('Answer "yes" if the number is even, otherwise answer "no".');
-  while (gameLib.checkGameStatus()) {
-    const questNum = gameLib.generateNum(maxValue);
-    const userAnswer = gameLib.getAnswer(questNum);
-    gameLib.checkAnswer(isEven(questNum), userAnswer, userName);
-  }
+  // const userName = gameLib.greeting();
+  // gameLib.gameRules(rules);
+  // while (gameLib.checkGameStatus()) {
+  //   const questNum = gameLib.generateNum(min, max);
+  //   const userAnswer = gameLib.getAnswer(questNum);
+  //   gameLib.checkAnswer(getRightAnswer(isEven(questNum)), userAnswer, userName);
+  // }
 };
