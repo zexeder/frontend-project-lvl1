@@ -1,4 +1,4 @@
-import * as gameLib from '../index.js';
+import gameEngine, * as gameLib from '../index.js';
 
 const min = 1;
 const max = 50;
@@ -22,21 +22,10 @@ const generateGameData = () => {
   const num2 = gameLib.generateNum(min, max);
   const questionNum = `${num1} ${num2}`;
   const rightAnswer = gcd(num1, num2);
+  
   return [questionNum, rightAnswer];
 };
 
 export default () => {
-  gameLib.gameEngine(rules, generateGameData);
-
-  // const userName = gameLib.greeting();
-  // gameLib.gameRules(rules);
-  // while (gameLib.checkGameStatus()) {
-  //   const num1 = gameLib.generateNum(min, max);
-  //   const num2 = gameLib.generateNum(min, max);
-  //   const result = gcd(num1, num2);
-  //   const question = `${num1} ${num2}`;
-  //   // console.log(num1, num2, result);
-  //   const userAnswer = gameLib.getAnswer(question);
-  //   gameLib.checkAnswer(result, Number(userAnswer), userName);
-  // }
+  gameEngine(rules, generateGameData);
 };

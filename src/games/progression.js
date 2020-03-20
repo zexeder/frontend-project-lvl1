@@ -1,4 +1,4 @@
-import * as gameLib from '../index.js';
+import gameEngine, * as gameLib from '../index.js';
 
 const progressionLength = 10;
 const min = 0;
@@ -24,7 +24,6 @@ const generateGameData = () => {
   const progressionArr = generateProgression(startNum, stepNum);
   const hiddenArrIndex = gameLib.generateNum(min, max - 1);
   const hiddenNum = progressionArr[hiddenArrIndex];
-
   const questionNum = hideNumber(hiddenArrIndex, progressionArr);
   const rightAnswer = hiddenNum;
 
@@ -32,21 +31,5 @@ const generateGameData = () => {
 };
 
 export default () => {
-  gameLib.gameEngine(rules, generateGameData);
-
-  // const userName = gameLib.greeting();
-  // gameLib.gameRules(rules);
-  // while (gameLib.checkGameStatus()) {
-  //   const startNum = gameLib.generateNum(min, max);
-  //   const stepNum = gameLib.generateNum(min, max);
-  //   const progressionArr = generateProgression(startNum, stepNum);
-
-  //   const hiddenArrIndex = gameLib.generateNum(min, max - 1);
-
-  //   const hiddenNum = progressionArr[hiddenArrIndex];
-  //   const rightAnswer = hiddenNum;
-  //   const question = hideNumber(hiddenArrIndex, progressionArr);
-  //   const userAnswer = gameLib.getAnswer(question);
-  //   gameLib.checkAnswer(Number(rightAnswer), Number(userAnswer), userName);
-  // }
+  gameEngine(rules, generateGameData);
 };

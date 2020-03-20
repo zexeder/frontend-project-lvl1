@@ -1,4 +1,4 @@
-import * as gameLib from '../index.js';
+import gameEngine, * as gameLib from '../index.js';
 
 const min = 0;
 const max = 100;
@@ -22,16 +22,10 @@ const isPrime = (num) => {
 const generateGameData = () => {
   const questionNum = gameLib.generateNum(min, max);
   const righAnswer = isPrime(questionNum) ? 'yes' : 'no';
+  
   return [questionNum, righAnswer];
 };
 
 export default () => {
-  gameLib.gameEngine(rules, generateGameData);
-  // const userName = gameLib.greeting();
-  // gameLib.gameRules(rules);
-  // while (gameLib.checkGameStatus()) {
-  //   const questNum = gameLib.generateNum(min, max);
-  //   const userAnswer = gameLib.getAnswer(questNum);
-  //   gameLib.checkAnswer(isPrime(questNum), userAnswer, userName);
-  // }
+  gameEngine(rules, generateGameData);
 };

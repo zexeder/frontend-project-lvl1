@@ -12,19 +12,6 @@ const checkGameStatus = () => {
   return true;
 };
 
-// const greeting = () => {
-//   console.log('Welcome to the Brain Games!');
-//   const name = readlineSync.question('May I have your name?: ');
-//   console.log(`Hello, ${name}!`);
-//   return name;
-// };
-
-// const gameRules = (str) => {
-//   console.log(str);
-// };
-
-// const getAnswer = (question) => readlineSync.question(`Question: ${question} \nYour answer: `);
-
 const generateNum = (min = 0, max = 50) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const checkScore = (name) => {
@@ -59,12 +46,5 @@ const gameEngine = (gameRules, gameData) => {
   }
 };
 
-export {
-  // checkGameStatus,
-  // gameRules,
-  // greeting,
-  // getAnswer,
-  // checkAnswer,
-  generateNum,
-  gameEngine,
-};
+export { generateNum };
+export default gameEngine;
