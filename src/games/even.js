@@ -9,7 +9,7 @@ const isEven = (num) => (num % 2 === 0);
 const generateData = () => {
   const questionNum = gameLib.generateNum(min, max);
   const rightAnswer = isEven(questionNum) ? 'yes' : 'no';
-  
+
   return [questionNum, rightAnswer];
 };
 

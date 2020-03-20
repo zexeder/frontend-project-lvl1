@@ -22,7 +22,7 @@ const isPrime = (num) => {
 const generateGameData = () => {
   const questionNum = gameLib.generateNum(min, max);
   const righAnswer = isPrime(questionNum) ? 'yes' : 'no';
-  
+
   return [questionNum, righAnswer];
 };
 

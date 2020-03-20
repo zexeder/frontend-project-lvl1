@@ -27,7 +27,7 @@ const generateGameData = () => {
   const oper = operationSign(operationsArr);
   const questionNum = `${num1} ${oper} ${num2}`;
   const rightAnswer = calc(oper, num1, num2);
-  
+
   return [questionNum, rightAnswer];
 };
 

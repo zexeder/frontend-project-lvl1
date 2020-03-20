@@ -22,7 +22,7 @@ const generateGameData = () => {
   const num2 = gameLib.generateNum(min, max);
   const questionNum = `${num1} ${num2}`;
   const rightAnswer = gcd(num1, num2);
-  
+
   return [questionNum, rightAnswer];
 };
 
