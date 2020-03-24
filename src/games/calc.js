@@ -1,36 +1,40 @@
-import gameEngine, * as gameLib from '../index.js';
+import gameEngine from '../index.js';
+import generateNum from '../utils.js';
 
 const min = 0;
 const max = 50;
-const rules = 'What is the result of the expression?';
-const operationsArr = ['+', '-', '*'];
+const descrtiption = 'What is the result of the expression?';
+const operations = ['+', '-', '*'];
 
-const operationSign = (arr) => {
-  const num = gameLib.generateNum(0, 2);
+const getOperationSign = (arr) => {
+  const size = operations.length - 1;
+  const num = generateNum(0, size);
   return arr[num];
 };
 
-const calc = (oper, a, b) => {
-  switch (oper) {
+const calc = (operationSign, a, b) => {
+  switch (operationSign) {
     case '-':
       return a - b;
     case '*':
       return a * b;
-    default:
+    case '+':
       return a + b;
+    default:
+      return 'Неизвестный оператор';
   }
 };
 
 const generateGameData = () => {
-  const num1 = gameLib.generateNum(min, max);
-  const num2 = gameLib.generateNum(min, max);
-  const oper = operationSign(operationsArr);
-  const questionNum = `${num1} ${oper} ${num2}`;
-  const rightAnswer = calc(oper, num1, num2);
+  const num1 = generateNum(min, max);
+  const num2 = generateNum(min, max);
+  const operation = getOperationSign(operations);
+  const question = `${num1} ${operation} ${num2}`;
+  const rightAnswer = calc(operation, num1, num2);
 
-  return [questionNum, rightAnswer];
+  return [question, rightAnswer];
 };
 
 export default () => {
-  gameEngine(rules, generateGameData);
+  gameEngine(descrtiption, generateGameData);
 };

@@ -1,9 +1,10 @@
-import gameEngine, * as gameLib from '../index.js';
+import gameEngine from '../index.js';
+import generateNum from '../utils.js';
 
-const progressionLength = 10;
 const min = 0;
 const max = 10;
-const rules = 'What number is missing in the progression?';
+const progressionLength = 10;
+const descrtiption = 'What number is missing in the progression?';
 
 const generateProgression = (start, step) => {
   const arr = [];
@@ -19,17 +20,17 @@ const hideNumber = (num, arr) => {
 };
 
 const generateGameData = () => {
-  const startNum = gameLib.generateNum(min, max);
-  const stepNum = gameLib.generateNum(min, max);
+  const startNum = generateNum(min, max);
+  const stepNum = generateNum(min, max);
   const progressionArr = generateProgression(startNum, stepNum);
-  const hiddenArrIndex = gameLib.generateNum(min, max - 1);
+  const hiddenArrIndex = generateNum(min, progressionLength - 1);
   const hiddenNum = progressionArr[hiddenArrIndex];
-  const questionNum = hideNumber(hiddenArrIndex, progressionArr);
+  const question = hideNumber(hiddenArrIndex, progressionArr);
   const rightAnswer = hiddenNum;
 
-  return [questionNum, rightAnswer];
+  return [question, rightAnswer];
 };
 
 export default () => {
-  gameEngine(rules, generateGameData);
+  gameEngine(descrtiption, generateGameData);
 };

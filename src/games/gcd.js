@@ -1,8 +1,9 @@
-import gameEngine, * as gameLib from '../index.js';
+import gameEngine from '../index.js';
+import generateNum from '../utils.js';
 
 const min = 1;
 const max = 50;
-const rules = 'Find the greatest common divisor of given numbers.';
+const descrtiption = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   let greatest = Math.min(num1, num2);
@@ -18,14 +19,14 @@ const gcd = (num1, num2) => {
 };
 
 const generateGameData = () => {
-  const num1 = gameLib.generateNum(min, max);
-  const num2 = gameLib.generateNum(min, max);
-  const questionNum = `${num1} ${num2}`;
+  const num1 = generateNum(min, max);
+  const num2 = generateNum(min, max);
+  const question = `${num1} ${num2}`;
   const rightAnswer = gcd(num1, num2);
 
-  return [questionNum, rightAnswer];
+  return [question, rightAnswer];
 };
 
 export default () => {
-  gameEngine(rules, generateGameData);
+  gameEngine(descrtiption, generateGameData);
 };

@@ -1,18 +1,19 @@
-import gameEngine, * as gameLib from '../index.js';
+import gameEngine from '../index.js';
+import generateNum from '../utils.js';
 
 const min = 0;
 const max = 50;
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const descrtiption = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => (num % 2 === 0);
 
 const generateData = () => {
-  const questionNum = gameLib.generateNum(min, max);
-  const rightAnswer = isEven(questionNum) ? 'yes' : 'no';
+  const question = generateNum(min, max);
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
 
-  return [questionNum, rightAnswer];
+  return [question, rightAnswer];
 };
 
 export default () => {
-  gameEngine(rules, generateData);
+  gameEngine(descrtiption, generateData);
 };

@@ -1,8 +1,9 @@
-import gameEngine, * as gameLib from '../index.js';
+import gameEngine from '../index.js';
+import generateNum from '../utils.js';
 
 const min = 0;
 const max = 100;
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const descrtiption = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   const half = Math.ceil(num / 2);
@@ -20,12 +21,12 @@ const isPrime = (num) => {
 
 
 const generateGameData = () => {
-  const questionNum = gameLib.generateNum(min, max);
-  const righAnswer = isPrime(questionNum) ? 'yes' : 'no';
+  const question = generateNum(min, max);
+  const righAnswer = isPrime(question) ? 'yes' : 'no';
 
-  return [questionNum, righAnswer];
+  return [question, righAnswer];
 };
 
 export default () => {
-  gameEngine(rules, generateGameData);
+  gameEngine(descrtiption, generateGameData);
 };
