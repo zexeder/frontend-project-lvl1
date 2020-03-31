@@ -12,6 +12,10 @@
 
 ## Для запуска игры необходим nodejs (не ниже 13 версии)
 
+## Завиимости
+- npm v6.14+
+- readline-sync v1.4+
+
 ## Установка
 npm install
 npm link
@@ -23,17 +27,17 @@ npm unlink
 Игры состоят из 3 раундов. При каждомо запуске игры, у игрока запрашивается имя. После того, как он введет свое имя, игроку задается по одному вопросу. Если игрок правильно отвечает на все 3 вопроса - он побеждает. Если ошибается, игра моментально заканчивается.
 Пустой ответ, также считается за ошибку.
 
-### brain-even (установка и запуск)
+### brain-even
 [![asciicast](https://asciinema.org/a/AzE3hXRJ98rmjkiY4a0lkJ8pb.svg)](https://asciinema.org/a/AzE3hXRJ98rmjkiY4a0lkJ8pb?t=8)
 
-### brain-calc (установка и запуск)
+### brain-calc
 [![asciicast](https://asciinema.org/a/7DW6ywdSxZEtT9Hem0CABqeNA.svg)](https://asciinema.org/a/7DW6ywdSxZEtT9Hem0CABqeNA?t=8)
 
-### brain-gcd (пример игры)
+### brain-gcd
 [![asciicast](https://asciinema.org/a/vlq1UQjeXeydNUclNsGHFfsQZ.svg)](https://asciinema.org/a/vlq1UQjeXeydNUclNsGHFfsQZ)
 
-### brain-progression (пример игры)
+### brain-progression
 [![asciicast](https://asciinema.org/a/5rzaFNO8zzuI1sykkXbsqM5lZ.svg)](https://asciinema.org/a/5rzaFNO8zzuI1sykkXbsqM5lZ)
 
-### brain-prime (пример игры)
+### brain-prime
 [![asciicast](https://asciinema.org/a/kOPl1YJYcbsqy1kjthrT754Th.svg)](https://asciinema.org/a/kOPl1YJYcbsqy1kjthrT754Th)
