@@ -3,7 +3,7 @@ import generateNum from '../utils.js';
 
 const min = 0;
 const max = 50;
-const descrtiption = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => (num % 2 === 0);
 
@@ -15,5 +15,5 @@ const generateData = () => {
 };
 
 export default () => {
-  gameEngine(descrtiption, generateData);
+  gameEngine(description, generateData);
 };

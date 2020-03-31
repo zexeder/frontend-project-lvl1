@@ -1,7 +1,14 @@
 {
   "name": "brain-games",
   "version": "1.0.0",
-  "description": "",
+  "keywords": [
+    "npm",
+    "nodejs",
+    "cli",
+    "games",
+    "brain-games"
+  ],
+  "description": "This package include 5 brain games. Enjoy!",
   "main": "src/index.js",
   "bin": {
     "brain-even": "bin/brain-even.js",
@@ -18,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/zexeder/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Anton",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zexeder/frontend-project-lvl1/issues"

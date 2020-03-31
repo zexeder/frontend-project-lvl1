@@ -3,7 +3,7 @@ import generateNum from '../utils.js';
 
 const min = 1;
 const max = 50;
-const descrtiption = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   let greatest = Math.min(num1, num2);
@@ -22,11 +22,11 @@ const generateGameData = () => {
   const num1 = generateNum(min, max);
   const num2 = generateNum(min, max);
   const question = `${num1} ${num2}`;
-  const rightAnswer = gcd(num1, num2);
+  const rightAnswer = String(gcd(num1, num2));
 
   return [question, rightAnswer];
 };
 
 export default () => {
-  gameEngine(descrtiption, generateGameData);
+  gameEngine(description, generateGameData);
 };

@@ -3,13 +3,13 @@ import generateNum from '../utils.js';
 
 const min = 0;
 const max = 50;
-const descrtiption = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
-const getOperationSign = (arr) => {
-  const size = operations.length - 1;
-  const num = generateNum(0, size);
-  return arr[num];
+const getOperationSign = (signList) => {
+  const maxIndex = operations.length - 1;
+  const index = generateNum(0, maxIndex);
+  return signList[index];
 };
 
 const calc = (operationSign, a, b) => {
@@ -21,7 +21,7 @@ const calc = (operationSign, a, b) => {
     case '+':
       return a + b;
     default:
-      return 'Неизвестный оператор';
+      return null;
   }
 };
 
@@ -30,11 +30,11 @@ const generateGameData = () => {
   const num2 = generateNum(min, max);
   const operation = getOperationSign(operations);
   const question = `${num1} ${operation} ${num2}`;
-  const rightAnswer = calc(operation, num1, num2);
+  const rightAnswer = String(calc(operation, num1, num2));
 
   return [question, rightAnswer];
 };
 
 export default () => {
-  gameEngine(descrtiption, generateGameData);
+  gameEngine(description, generateGameData);
 };
