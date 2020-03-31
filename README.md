@@ -4,11 +4,11 @@
 # Игры разума
 Данный пакет представляет собой набор из 5 консольных игр. 
 
-* [brain-even](#brain-even)
-* [brain-calc](#brain-calc)
-* [brain-gcd](#brain-gcd)
-* [brain-progression](#brain-progression)
-* [brain-prime](#brain-prime)
+* [brain-even ("Проверка на четность")](#brain-even)
+* [brain-calc ("Калькулятор")](#brain-calc)
+* [brain-gcd ("Наибольший общий делитель")](#brain-gcd)
+* [brain-progression ("Арифметическая прогрессия")](#brain-progression)
+* [brain-prime "Простое ли число?"](#brain-prime)
 
 ## Для запуска игры необходим nodejs (не ниже 13 версии)
 
@@ -18,6 +18,7 @@
 
 ## Установка
 npm install
+
 npm link
 
 ## Удаление
@@ -28,16 +29,21 @@ npm unlink
 Пустой ответ, также считается за ошибку.
 
 ### brain-even
+Игра "Проверка на четность". Игроку показывается случайное число. Ему нужно ответить yes, если число чётное, или no — если нечётное.
 [![asciicast](https://asciinema.org/a/AzE3hXRJ98rmjkiY4a0lkJ8pb.svg)](https://asciinema.org/a/AzE3hXRJ98rmjkiY4a0lkJ8pb?t=8)
 
 ### brain-calc
+Игра "Калькулятор". Игроку показывается случайное математическое выражение, например 72 + 5, которое нужно вычислить и записать правильный ответ.
 [![asciicast](https://asciinema.org/a/7DW6ywdSxZEtT9Hem0CABqeNA.svg)](https://asciinema.org/a/7DW6ywdSxZEtT9Hem0CABqeNA?t=8)
 
 ### brain-gcd
+Игра "Наибольший общий делитель". Игроку показывается два случайных числа, например, 15 30. Игрок должен вычислить и ввести наибольший общий делитель этих чисел.
 [![asciicast](https://asciinema.org/a/vlq1UQjeXeydNUclNsGHFfsQZ.svg)](https://asciinema.org/a/vlq1UQjeXeydNUclNsGHFfsQZ)
 
 ### brain-progression
+Игра "Арифметическая прогрессия". Игроку показывается ряд чисел, образующий арифметическую прогрессию. Одно из чисел заменено двуя точкми. Игрок должен определить это число.
 [![asciicast](https://asciinema.org/a/5rzaFNO8zzuI1sykkXbsqM5lZ.svg)](https://asciinema.org/a/5rzaFNO8zzuI1sykkXbsqM5lZ)
 
 ### brain-prime
+Игра "Простое ли число?" Игроку показывается случайное число. Ему нужно ответить yes, если число простое, иначе - no.
 [![asciicast](https://asciinema.org/a/kOPl1YJYcbsqy1kjthrT754Th.svg)](https://asciinema.org/a/kOPl1YJYcbsqy1kjthrT754Th)
