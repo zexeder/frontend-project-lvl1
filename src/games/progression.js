@@ -7,25 +7,25 @@ const progressionLength = 10;
 const description = 'What number is missing in the progression?';
 
 const generateProgression = (start, step) => {
-  const list = [];
-  for (let i = start; list.length < progressionLength; i += step) {
-    list.push(i);
+  const progressionList = [];
+  for (let i = start; progressionList.length < progressionLength; i += step) {
+    progressionList.push(i);
   }
-  return list;
+  return progressionList;
 };
 
-const createGameQuestion = (num, list) => {
-  list.splice(num, 1, '..');
+const createGameQuestion = (progressionItem, list) => {
+  list.splice(progressionItem, 1, '..');
   return list.join(' ');
 };
 
 const generateGameData = () => {
   const startNum = generateNum(min, max);
   const stepNum = generateNum(min, max);
-  const progressionList = generateProgression(startNum, stepNum);
+  const progression = generateProgression(startNum, stepNum);
   const hiddenElementIndex = generateNum(min, progressionLength - 1);
-  const rightAnswer = String(progressionList[hiddenElementIndex]);
-  const question = createGameQuestion(hiddenElementIndex, progressionList);
+  const rightAnswer = String(progression[hiddenElementIndex]);
+  const question = createGameQuestion(hiddenElementIndex, progression);
   return [question, rightAnswer];
 };
 

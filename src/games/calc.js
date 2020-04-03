@@ -6,10 +6,10 @@ const max = 50;
 const description = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
-const getOperationSign = (signList) => {
+const getOperationSign = (signs) => {
   const maxIndex = operations.length - 1;
   const index = generateNum(0, maxIndex);
-  return signList[index];
+  return signs[index];
 };
 
 const calc = (operationSign, a, b) => {
